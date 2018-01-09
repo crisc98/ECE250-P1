@@ -46,11 +46,11 @@
       <file leaf-file-name="Double_sentinel_list.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Double_sentinel_list.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3848">
-              <caret line="105" column="46" lean-forward="false" selection-start-line="105" selection-start-column="46" selection-end-line="105" selection-end-column="46" />
+            <state relative-caret-position="259">
+              <caret line="107" column="30" lean-forward="false" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
               <folding>
-                <element signature="e#3456#3471#0" expanded="true" />
-                <element signature="e#4536#4551#0" expanded="true" />
+                <element signature="e#3240#3255#0" expanded="true" />
+                <element signature="e#4320#4335#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -236,12 +236,12 @@
       <workItem from="1515362223191" duration="12492000" />
       <workItem from="1515462836307" duration="47000" />
       <workItem from="1515463365129" duration="6740000" />
-      <workItem from="1515504831293" duration="7682000" />
+      <workItem from="1515504831293" duration="8116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26961000" />
+    <option name="totallyTimeSpent" value="27395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="2764" height="1762" extended-state="6" />
@@ -301,8 +301,8 @@
         <state relative-caret-position="4255">
           <caret line="115" column="37" lean-forward="false" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="37" />
           <folding>
-            <element signature="e#3456#3471#0" expanded="true" />
-            <element signature="e#4536#4551#0" expanded="true" />
+            <element signature="e#3240#3255#0" expanded="true" />
+            <element signature="e#4320#4335#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -416,8 +416,8 @@
         <state relative-caret-position="215">
           <caret line="114" column="1" lean-forward="false" selection-start-line="114" selection-start-column="1" selection-end-line="116" selection-end-column="24" />
           <folding>
-            <element signature="e#3456#3471#0" expanded="true" />
-            <element signature="e#4536#4551#0" expanded="true" />
+            <element signature="e#3240#3255#0" expanded="true" />
+            <element signature="e#4320#4335#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -483,8 +483,8 @@
         <state relative-caret-position="1938">
           <caret line="114" column="1" lean-forward="true" selection-start-line="114" selection-start-column="1" selection-end-line="116" selection-end-column="24" />
           <folding>
-            <element signature="e#3456#3471#0" expanded="true" />
-            <element signature="e#4536#4551#0" expanded="true" />
+            <element signature="e#3240#3255#0" expanded="true" />
+            <element signature="e#4320#4335#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -603,11 +603,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Double_sentinel_list.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3848">
-          <caret line="105" column="46" lean-forward="false" selection-start-line="105" selection-start-column="46" selection-end-line="105" selection-end-column="46" />
+        <state relative-caret-position="259">
+          <caret line="107" column="30" lean-forward="false" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
           <folding>
-            <element signature="e#3456#3471#0" expanded="true" />
-            <element signature="e#4536#4551#0" expanded="true" />
+            <element signature="e#3240#3255#0" expanded="true" />
+            <element signature="e#4320#4335#0" expanded="true" />
           </folding>
         </state>
       </provider>

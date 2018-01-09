@@ -98,18 +98,14 @@ template <typename Type>
 Double_sentinel_list<Type>::Double_sentinel_list( Double_sentinel_list<Type> const &list ):
 list_size( 0 )
 {
-    std::cout << "Copy Constructor called" <<std::endl;
     list_tail = new Double_node(0, nullptr, nullptr);
     list_head = new Double_node(0, nullptr, list_tail);
-    std::cout << "Nodes alloc" <<std::endl;
     list_tail->previous_node = list_head;
-    std::cout << "Pointers assigned" <<std::endl;
     if(list.empty()){
         return;
     }
     Double_node *trav = list.begin();
     while(trav != list.end()){
-        std::cout << "Node added " << trav->value() << std::endl;
         push_back(trav->value());
         if(trav->next()==list.begin())
             break;
