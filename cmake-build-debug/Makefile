@@ -47,24 +47,13 @@ RM = "C:\Program Files\JetBrains\CLion 2017.3.1\bin\cmake\bin\cmake.exe" -E remo
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Cristiano Chelotti\Desktop\Uni\2A\Project1"
+CMAKE_SOURCE_DIR = C:\Users\crisc\Desktop\Uni\2A\ECE250-P1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Cristiano Chelotti\Desktop\Uni\2A\Project1\cmake-build-debug"
+CMAKE_BINARY_DIR = C:\Users\crisc\Desktop\Uni\2A\ECE250-P1\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2017.3.1\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -77,11 +66,22 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	"C:\Program Files\JetBrains\CLion 2017.3.1\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Cristiano Chelotti\Desktop\Uni\2A\Project1\cmake-build-debug\CMakeFiles" "C:\Users\Cristiano Chelotti\Desktop\Uni\2A\Project1\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\crisc\Desktop\Uni\2A\ECE250-P1\cmake-build-debug\CMakeFiles C:\Users\crisc\Desktop\Uni\2A\ECE250-P1\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Cristiano Chelotti\Desktop\Uni\2A\Project1\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\crisc\Desktop\Uni\2A\ECE250-P1\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -110,17 +110,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Project1
+# Target rules for targets named ECE250_P1
 
 # Build rule for target.
-Project1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 Project1
-.PHONY : Project1
+ECE250_P1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 ECE250_P1
+.PHONY : ECE250_P1
 
 # fast build rule for target.
-Project1/fast:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/build
-.PHONY : Project1/fast
+ECE250_P1/fast:
+	$(MAKE) -f CMakeFiles\ECE250_P1.dir\build.make CMakeFiles/ECE250_P1.dir/build
+.PHONY : ECE250_P1/fast
 
 Double_sentinel_list_driver.obj: Double_sentinel_list_driver.cpp.obj
 
@@ -128,7 +128,7 @@ Double_sentinel_list_driver.obj: Double_sentinel_list_driver.cpp.obj
 
 # target to build an object file
 Double_sentinel_list_driver.cpp.obj:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Double_sentinel_list_driver.cpp.obj
+	$(MAKE) -f CMakeFiles\ECE250_P1.dir\build.make CMakeFiles/ECE250_P1.dir/Double_sentinel_list_driver.cpp.obj
 .PHONY : Double_sentinel_list_driver.cpp.obj
 
 Double_sentinel_list_driver.i: Double_sentinel_list_driver.cpp.i
@@ -137,7 +137,7 @@ Double_sentinel_list_driver.i: Double_sentinel_list_driver.cpp.i
 
 # target to preprocess a source file
 Double_sentinel_list_driver.cpp.i:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Double_sentinel_list_driver.cpp.i
+	$(MAKE) -f CMakeFiles\ECE250_P1.dir\build.make CMakeFiles/ECE250_P1.dir/Double_sentinel_list_driver.cpp.i
 .PHONY : Double_sentinel_list_driver.cpp.i
 
 Double_sentinel_list_driver.s: Double_sentinel_list_driver.cpp.s
@@ -146,7 +146,7 @@ Double_sentinel_list_driver.s: Double_sentinel_list_driver.cpp.s
 
 # target to generate assembly for a file
 Double_sentinel_list_driver.cpp.s:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/Double_sentinel_list_driver.cpp.s
+	$(MAKE) -f CMakeFiles\ECE250_P1.dir\build.make CMakeFiles/ECE250_P1.dir/Double_sentinel_list_driver.cpp.s
 .PHONY : Double_sentinel_list_driver.cpp.s
 
 simpleTester.obj: simpleTester.cpp.obj
@@ -155,7 +155,7 @@ simpleTester.obj: simpleTester.cpp.obj
 
 # target to build an object file
 simpleTester.cpp.obj:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/simpleTester.cpp.obj
+	$(MAKE) -f CMakeFiles\ECE250_P1.dir\build.make CMakeFiles/ECE250_P1.dir/simpleTester.cpp.obj
 .PHONY : simpleTester.cpp.obj
 
 simpleTester.i: simpleTester.cpp.i
@@ -164,7 +164,7 @@ simpleTester.i: simpleTester.cpp.i
 
 # target to preprocess a source file
 simpleTester.cpp.i:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/simpleTester.cpp.i
+	$(MAKE) -f CMakeFiles\ECE250_P1.dir\build.make CMakeFiles/ECE250_P1.dir/simpleTester.cpp.i
 .PHONY : simpleTester.cpp.i
 
 simpleTester.s: simpleTester.cpp.s
@@ -173,7 +173,7 @@ simpleTester.s: simpleTester.cpp.s
 
 # target to generate assembly for a file
 simpleTester.cpp.s:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/simpleTester.cpp.s
+	$(MAKE) -f CMakeFiles\ECE250_P1.dir\build.make CMakeFiles/ECE250_P1.dir/simpleTester.cpp.s
 .PHONY : simpleTester.cpp.s
 
 test.obj: test.cpp.obj
@@ -182,7 +182,7 @@ test.obj: test.cpp.obj
 
 # target to build an object file
 test.cpp.obj:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/test.cpp.obj
+	$(MAKE) -f CMakeFiles\ECE250_P1.dir\build.make CMakeFiles/ECE250_P1.dir/test.cpp.obj
 .PHONY : test.cpp.obj
 
 test.i: test.cpp.i
@@ -191,7 +191,7 @@ test.i: test.cpp.i
 
 # target to preprocess a source file
 test.cpp.i:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/test.cpp.i
+	$(MAKE) -f CMakeFiles\ECE250_P1.dir\build.make CMakeFiles/ECE250_P1.dir/test.cpp.i
 .PHONY : test.cpp.i
 
 test.s: test.cpp.s
@@ -200,7 +200,7 @@ test.s: test.cpp.s
 
 # target to generate assembly for a file
 test.cpp.s:
-	$(MAKE) -f CMakeFiles\Project1.dir\build.make CMakeFiles/Project1.dir/test.cpp.s
+	$(MAKE) -f CMakeFiles\ECE250_P1.dir\build.make CMakeFiles/ECE250_P1.dir/test.cpp.s
 .PHONY : test.cpp.s
 
 # Help Target
@@ -209,9 +209,9 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... rebuild_cache
-	@echo ... Project1
+	@echo ... ECE250_P1
 	@echo ... edit_cache
+	@echo ... rebuild_cache
 	@echo ... Double_sentinel_list_driver.obj
 	@echo ... Double_sentinel_list_driver.i
 	@echo ... Double_sentinel_list_driver.s

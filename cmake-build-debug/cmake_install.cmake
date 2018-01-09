@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1
+# Install script for directory: C:/Users/crisc/Desktop/Uni/2A/ECE250-P1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Project1")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/ECE250_P1")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/crisc/Desktop/Uni/2A/ECE250-P1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

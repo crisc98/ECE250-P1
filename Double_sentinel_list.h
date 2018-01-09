@@ -86,9 +86,6 @@ class Double_sentinel_list {
 
 template <typename Type>
 Double_sentinel_list<Type>::Double_sentinel_list():
-// Updated the initialization list here
-list_head( nullptr ),
-list_tail( nullptr ),
 list_size( 0 )
 {
 	// Creates head and tail sentinel nodes and assigns the head and tail pointers to these nodes
@@ -99,43 +96,35 @@ list_size( 0 )
 
 template <typename Type>
 Double_sentinel_list<Type>::Double_sentinel_list( Double_sentinel_list<Type> const &list ):
-// Updated the initialization list here
-list_head( nullptr ),
-list_tail( nullptr ),
 list_size( 0 )
 {
-    std::cout << "Copy Constructor called";
+    std::cout << "Copy Constructor called" <<std::endl;
     list_tail = new Double_node(0, nullptr, nullptr);
     list_head = new Double_node(0, nullptr, list_tail);
+    std::cout << "Nodes alloc" <<std::endl;
     list_tail->previous_node = list_head;
-	list_head = list.rend();
-    list_tail = list.end();
+    std::cout << "Pointers assigned" <<std::endl;
     if(list.empty()){
         return;
     }
     Double_node *trav = list.begin();
     while(trav != list.end()){
+        std::cout << "Node added " << trav->value() << std::endl;
         push_back(trav->value());
+        if(trav->next()==list.begin())
+            break;
         trav=trav->next();
     }
 }
 
 template <typename Type>
 Double_sentinel_list<Type>::Double_sentinel_list( Double_sentinel_list<Type> &&list ):
-// Updated the initialization list here
-list_head( nullptr ),
-list_tail( nullptr ),
+list_head(nullptr),
+list_tail(nullptr),
 list_size( 0 )
 {
-    list_head = list.rend();
-    list_tail = list.end();
-    list_size = list.size();
-    Double_node *trav = list.begin();
-    while(trav != list.end()){
-        push_back(trav->value());
-        trav=trav->next();
-    }
-    delete(list);
+    std::cout << "Moved" << std::endl;
+    swap(list);
 
 }
 
@@ -218,6 +207,7 @@ typename Double_sentinel_list<Type>::Double_node *Double_sentinel_list<Type>::fi
 	}
 	return trav;
 }
+
 
 template <typename Type>
 int Double_sentinel_list<Type>::count( Type const &obj ) const {
