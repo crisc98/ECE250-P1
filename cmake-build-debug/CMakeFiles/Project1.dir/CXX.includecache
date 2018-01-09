@@ -1,0 +1,90 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Double_node_tester.h
+Exception.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Exception.h
+Tester.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Tester.h
+Double_sentinel_list.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Double_sentinel_list.h
+iostream
+-
+
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Double_sentinel_list.h
+iostream
+-
+Exception.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Exception.h
+
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Double_sentinel_list_driver.cpp
+iostream
+-
+cstring
+-
+Tester.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Tester.h
+Double_sentinel_list_tester.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Double_sentinel_list_tester.h
+Double_node_tester.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Double_node_tester.h
+
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Double_sentinel_list_tester.h
+Exception.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Exception.h
+Tester.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Tester.h
+Double_sentinel_list.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Double_sentinel_list.h
+Double_node_tester.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Double_node_tester.h
+iostream
+-
+
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Exception.h
+
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Tester.h
+iostream
+-
+string
+-
+sstream
+-
+ece250.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/ece250.h
+
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/ece250.h
+cstdlib
+-
+iostream
+-
+iomanip
+-
+string
+-
+cstring
+-
+cmath
+-
+ctime
+-
+Exception.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Exception.h
+
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/simpleTester.cpp
+iostream
+-
+Double_sentinel_list.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Double_sentinel_list.h
+
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/test.cpp
+iostream
+-
+Double_sentinel_list.h
+C:/Users/Cristiano Chelotti/Desktop/Uni/2A/Project1/Double_sentinel_list.h
+

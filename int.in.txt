@@ -10,9 +10,10 @@ back 5
 push_back 7
 front 5
 back 7
+cout
 count 7 1
 count 6 0
-pop_back 7
+pop_back
 count 7 0
 begin
   value 5
@@ -20,7 +21,10 @@ begin
   next0
 exit
 erase 5 1
+cout
 empty 1
+cout
 size 0
+cout
 delete
 summary

@@ -104,9 +104,15 @@ list_head( nullptr ),
 list_tail( nullptr ),
 list_size( 0 )
 {
+    std::cout << "Copy Constructor called";
+    list_tail = new Double_node(0, nullptr, nullptr);
+    list_head = new Double_node(0, nullptr, list_tail);
+    list_tail->previous_node = list_head;
 	list_head = list.rend();
     list_tail = list.end();
-    list_size = list.size();
+    if(list.empty()){
+        return;
+    }
     Double_node *trav = list.begin();
     while(trav != list.end()){
         push_back(trav->value());
@@ -135,13 +141,8 @@ list_size( 0 )
 
 template <typename Type>
 Double_sentinel_list<Type>::~Double_sentinel_list() {
-    Double_node *temp = list_head->next();
-    while(temp != list_tail){
-        list_head->next_node = temp->next();
-        temp->next_node = nullptr;
-        delete (temp);
-        temp = list_head->next();
-    }
+    while(!empty())
+		pop_front();
     delete (list_tail);
     delete (list_head);
 	
@@ -169,7 +170,7 @@ Type Double_sentinel_list<Type>::front() const {
         return begin()->value();
     }
 	else{
-        return 0;
+       throw underflow();
     }
 }
 
@@ -180,7 +181,7 @@ Type Double_sentinel_list<Type>::back() const {
         return rbegin()->value();
     }
     else {
-        return 0;
+        throw underflow();
     }
 }
 
@@ -228,7 +229,7 @@ int Double_sentinel_list<Type>::count( Type const &obj ) const {
         }
         trav=trav->next();
     }
-	return 0;
+	return count;
 }
 
 template <typename Type>
@@ -281,6 +282,8 @@ void Double_sentinel_list<Type>::pop_front() {
 		Double_node *tmp = begin();
 		list_head->next_node = tmp->next();
 		tmp->next()->previous_node=list_head;
+        delete(tmp);
+		list_size--;
 	}
 	else {
 		throw underflow();
@@ -291,8 +294,11 @@ template <typename Type>
 void Double_sentinel_list<Type>::pop_back() {
 	// Enter your implementation here
     if(!empty()) {
-        rbegin()->previous()->next_node = list_tail;
-        list_tail->previous_node = rbegin()->previous();
+        Double_node *tmp = rbegin();
+        tmp->previous()->next_node = list_tail;
+        list_tail->previous_node = tmp->previous();
+        delete(tmp);
+        list_size--;
     } else {
         throw underflow();
     }
@@ -300,19 +306,24 @@ void Double_sentinel_list<Type>::pop_back() {
 
 template <typename Type>
 int Double_sentinel_list<Type>::erase( Type const &obj ) {
-	// Enter your implementation here
+    int count =0;
     if(empty()){
         return -1;
     }
     Double_node *trav = begin();
     while (trav!=list_tail){
         if(trav->value()==obj){
+            Double_node *tmp = trav;
             trav->previous()->next_node = trav->next();
             trav->next()->previous_node = trav->previous();
+            trav=trav->previous();
+            delete(tmp);
+            list_size--;
+            count++;
         }
         trav = trav->next();
     }
-	return 0;
+	return count;
 }
 
 template <typename Type>

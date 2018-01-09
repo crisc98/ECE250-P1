@@ -3,7 +3,7 @@
 
 #include "Double_sentinel_list.h"
 
-int main() {
+int amain() {
 	Double_sentinel_list<int> list;
 
 	std::cout << "Size:  " << list.size() << " ( = 0 )" << std::endl;
