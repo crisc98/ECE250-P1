@@ -73,8 +73,7 @@ class Double_sentinel_list {
 		Double_node *list_tail;
 		int list_size;
 
-		// List any additional private member functions you author here
-	// Friends
+
 
 	template <typename T>
 	friend std::ostream &operator<<( std::ostream &, Double_sentinel_list<T> const & );
@@ -88,7 +87,7 @@ template <typename Type>
 Double_sentinel_list<Type>::Double_sentinel_list():
 list_size( 0 )
 {
-	// Creates head and tail sentinel nodes and assigns the head and tail pointers to these nodes
+	// Default Constructor: Creates and assigns head and tail sentinel node pointers and binds them together
 	list_tail = new Double_node(0, nullptr, nullptr);
 	list_head = new Double_node(0, nullptr, list_tail);
 	list_tail->previous_node = list_head;
@@ -98,6 +97,7 @@ template <typename Type>
 Double_sentinel_list<Type>::Double_sentinel_list( Double_sentinel_list<Type> const &list ):
 list_size( 0 )
 {
+	//Copy Constructor: Creates a new list that is a copy of the list passed as an argument.
     list_tail = new Double_node(0, nullptr, nullptr);
     list_head = new Double_node(0, nullptr, list_tail);
     list_tail->previous_node = list_head;
@@ -119,13 +119,13 @@ list_head(nullptr),
 list_tail(nullptr),
 list_size( 0 )
 {
-    std::cout << "Moved" << std::endl;
+    //Move Constructor: Swaps the pointers of the argument list with a dead list with only null pointers
     swap(list);
-
 }
 
 template <typename Type>
 Double_sentinel_list<Type>::~Double_sentinel_list() {
+    //Destructor: Deallocates all memory allocated for the list
     while(!empty())
 		pop_front();
     delete (list_tail);
@@ -135,13 +135,13 @@ Double_sentinel_list<Type>::~Double_sentinel_list() {
 
 template <typename Type>
 int Double_sentinel_list<Type>::size() const {
-	
+	//Returns the number of nodes in the list
 	return list_size;
 }
 
 template <typename Type>
 bool Double_sentinel_list<Type>::empty() const {
-	// Enter your implementation here
+	// Returns true if the list is empty, otherwise, returns false
 	if (list_size==0){
 		return true;
 	}
@@ -172,31 +172,31 @@ Type Double_sentinel_list<Type>::back() const {
 
 template <typename Type>
 typename Double_sentinel_list<Type>::Double_node *Double_sentinel_list<Type>::begin() const {
-	// Enter your implementation here
+	// Returns a pointer to first non-sentinel node in the list
 	return list_head->next();
 }
 
 template <typename Type>
 typename Double_sentinel_list<Type>::Double_node *Double_sentinel_list<Type>::end() const {
-	// Enter your implementation here
+	// Returns a pointer to the list's tail sentinel
 	return list_tail;
 }
 
 template <typename Type>
 typename Double_sentinel_list<Type>::Double_node *Double_sentinel_list<Type>::rbegin() const {
-	// Enter your implementation here
+	// Returns a pointer to the last non-sentinel node in the list
 	return end()->previous();
 }
 
 template <typename Type>
 typename Double_sentinel_list<Type>::Double_node *Double_sentinel_list<Type>::rend() const {
-	// Enter your implementation here
+	// Returns a pointer to the list's head sentinel
 	return list_head;
 }
 
 template <typename Type>
 typename Double_sentinel_list<Type>::Double_node *Double_sentinel_list<Type>::find( Type const &obj ) const {
-	// Enter your implementation here
+	// Returns a pointer to the first node in the list with the value of the object passed as an argument
 	Double_node *trav = begin();
 	while(trav != list_tail && trav->value()!= obj){
 		trav = trav->next();
@@ -207,6 +207,7 @@ typename Double_sentinel_list<Type>::Double_node *Double_sentinel_list<Type>::fi
 
 template <typename Type>
 int Double_sentinel_list<Type>::count( Type const &obj ) const {
+    // Returns the number of nodes containing the value passed as an argument
 	int count = 0;
     Double_node *trav = begin();
     while(trav!=list_tail){
@@ -244,7 +245,7 @@ Double_sentinel_list<Type> &Double_sentinel_list<Type>::operator=( Double_sentin
 
 template <typename Type>
 void Double_sentinel_list<Type>::push_front( Type const &obj ) {
-
+    // Adds a new node with the specified value to the front of the list
 	Double_node *temp = new Double_node(obj, list_head, list_head->next_node);
     list_head->next_node->previous_node = temp;
     list_head->next_node = temp;
@@ -254,7 +255,7 @@ void Double_sentinel_list<Type>::push_front( Type const &obj ) {
 
 template <typename Type>
 void Double_sentinel_list<Type>::push_back( Type const &obj ) {
-
+    // Adds a new node with the specified value to the back of the list
     Double_node *temp = new Double_node(obj, list_tail->previous(), list_tail);
     list_tail->previous()->next_node = temp;
     list_tail->previous_node = temp;
@@ -263,7 +264,7 @@ void Double_sentinel_list<Type>::push_back( Type const &obj ) {
 
 template <typename Type>
 void Double_sentinel_list<Type>::pop_front() {
-	// Enter your implementation here
+	// Removes the first non-sentinel node in the list
 	if(!empty()){
 		Double_node *tmp = begin();
 		list_head->next_node = tmp->next();
@@ -278,7 +279,7 @@ void Double_sentinel_list<Type>::pop_front() {
 
 template <typename Type>
 void Double_sentinel_list<Type>::pop_back() {
-	// Enter your implementation here
+	// Removes the last non-sentinel node in the list
     if(!empty()) {
         Double_node *tmp = rbegin();
         tmp->previous()->next_node = list_tail;
@@ -292,6 +293,7 @@ void Double_sentinel_list<Type>::pop_back() {
 
 template <typename Type>
 int Double_sentinel_list<Type>::erase( Type const &obj ) {
+    // Removes all nodes containing the value passed as an argument
     int count =0;
     if(empty()){
         return -1;
@@ -315,30 +317,28 @@ int Double_sentinel_list<Type>::erase( Type const &obj ) {
 template <typename Type>
 Double_sentinel_list<Type>::Double_node::Double_node( Type const &nv, Double_sentinel_list<Type>::Double_node *pn, Double_sentinel_list<Type>::Double_node *nn ):
 // Updated the initialization list here
-node_value( Type() ), // This assigns 'node_value' the default value of Type
-previous_node( nullptr ),
-next_node( nullptr )
+node_value( nv ), // This assigns 'node_value' the value passed in
+previous_node( pn ), // Assigns the previous_node to the specified value
+next_node( nn ) // Assigns next_node to the specified value
 {
-	node_value = nv;
-	previous_node = pn;
-	next_node = nn;
+
 }
 
 template <typename Type>
 Type Double_sentinel_list<Type>::Double_node::value() const {
-	// Enter your implementation here
+	// Returns the value of the node
 	return node_value; // This returns a default value of Type
 }
 
 template <typename Type>
 typename Double_sentinel_list<Type>::Double_node *Double_sentinel_list<Type>::Double_node::previous() const {
-	// Enter your implementation here
+	// Returns a pointer to the previous node
 	return previous_node;
 }
 
 template <typename Type>
 typename Double_sentinel_list<Type>::Double_node *Double_sentinel_list<Type>::Double_node::next() const {
-	// Enter your implementation here
+	// Returns a pointer to the next node
 	return next_node;
 }
 
